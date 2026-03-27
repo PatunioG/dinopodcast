@@ -1,48 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>DinoPodcast</title>
-    <style>
-        body {
-            font-family: Arial;
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<title>DinoPodcast</title>
 
-        .box {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: auto;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #020617, #0f172a);
+        color: white;
+    }
 
-        audio {
-            width: 100%;
-            margin-top: 20px;
-        }
-    </style>
+    header {
+        padding: 30px;
+        text-align: center;
+        background: #020617;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 40px;
+        color: #22c55e;
+    }
+
+    header p {
+        opacity: 0.7;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .card {
+        background: #0f172a;
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0px 15px 40px rgba(0,0,0,0.7);
+    }
+
+    .cover {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947') center/cover;
+        margin-bottom: 20px;
+    }
+
+    .episode-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .hosts {
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+
+    audio {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .btn-play {
+        margin-top: 15px;
+        background: #22c55e;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-play:hover {
+        background: #16a34a;
+    }
+
+    .episodes {
+        margin-top: 30px;
+    }
+
+    .episode-item {
+        background: #1e293b;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+</style>
+
 </head>
 
 <body>
 
-    <div class="box">
-        <h1>🦖 DinoPodcast</h1>
+<header>
+    <h1>🦖 DinoPodcast</h1>
+    <p>Tu podcast sobre dinosaurios y temas increíbles</p>
+</header>
 
-        <p>
-            🎙️ Anfitriones:<br>
-            Angel - Badi - Jorge
-        </p>
+<div class="main">
+    <div class="card">
 
-        <h2>Episodio 1</h2>
+        <div class="cover"></div>
 
-        <audio controls>
+        <div class="episode-title">🎧 Episodio 1: El mundo jurásico</div>
+
+        <div class="hosts">
+            🎙️ Angel • Badi • Jorge
+        </div>
+
+        <button class="btn-play" onclick="document.getElementById('audio').play()">
+            ▶️ Reproducir
+        </button>
+
+        <audio id="audio" controls>
             <source src="podcast.mp3" type="audio/mpeg">
         </audio>
+
+        <div class="episodes">
+            <h3>Otros episodios (próximamente)</h3>
+
+            <div class="episode-item">Episodio 2 - Próximamente</div>
+            <div class="episode-item">Episodio 3 - Próximamente</div>
+        </div>
+
     </div>
+</div>
 
 </body>
 </html>
